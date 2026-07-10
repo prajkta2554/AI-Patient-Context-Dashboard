@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Patient {
+  id     Int    @id @default(autoincrement())
+  name   String
+  age    Int
+  gender String
+
+  aiSummary String?
+
+  createdAt DateTime @default(now())
+
+  conditions   Condition[]
+  medications  Medication[]
+  allergies    Allergy[]
+  observations Observation[]
+}
+
+model Condition {
+  id        Int     @id @default(autoincrement())
+  condition String
+  status    String
+  onsetDate String?
+
+  patientId Int
+  patient   Patient @relation(fields: [patientId], references: [id])
+}
+
+model Medication {
+  id        Int    @id @default(autoincrement())
+  name      String
+  dosage    String
+  frequency String
+
+  patientId Int
+  patient   Patient @relation(fields: [patientId], references: [id])
+}
+
+model Allergy {
+  id       Int    @id @default(autoincrement())
+  allergen String
+  reaction String
+
+  patientId Int
+  patient   Patient @relation(fields: [patientId], references: [id])
+}
+
+model Observation {
+  id    Int     @id @default(autoincrement())
+  type  String
+  value String
+  unit  String?
+
+  patientId Int
+  patient   Patient @relation(fields: [patientId], references: [id])
+}

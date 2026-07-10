@@ -1,0 +1,215 @@
+.sidebar{
+    width:270px;
+    height:100vh;
+    background:#0f172a;
+    position:fixed;
+    left:0;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* Logo */
+
+.logo{
+    height:90px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:25px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logoIcon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#2563eb,#60a5fa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:18px;
+}
+
+.logo h2{
+    margin:0;
+    font-size:24px;
+    font-weight:700;
+}
+
+.logo p{
+    margin-top:5px;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+/* Menu */
+
+.menu{
+    flex:1;
+    padding:25px 15px;
+}
+
+.menuItem{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:#cbd5e1;
+    padding:16px 18px;
+    border-radius:14px;
+    margin-bottom:12px;
+    transition:.3s;
+    font-size:16px;
+    font-weight:500;
+}
+
+.menuItem:hover{
+    background:#1e293b;
+    color:#fff;
+    transform:translateX(4px);
+}
+
+.menuIcon{
+    width:22px;
+    display:flex;
+    justify-content:center;
+    font-size:18px;
+}
+
+/* Active */
+
+.menuItem.active{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    color:white;
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+    height:56px; 
+}
+
+/* Bottom */
+
+.sidebarBottom{
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.storage p{
+    margin-bottom:10px;
+    font-size:14px;
+    color:#cbd5e1;
+}
+
+.progress{
+    height:8px;
+    border-radius:20px;
+    background:#1e293b;
+    overflow:hidden;
+}
+
+.progressFill{
+    width:72%;
+    height:100%;
+    background:linear-gradient(90deg,#3b82f6,#60a5fa);
+}
+
+.storage small{
+    display:block;
+    margin-top:8px;
+    color:#94a3b8;
+}
+
+/* Scroll */
+
+.menu::-webkit-scrollbar{
+    width:4px;
+}
+
+.menu::-webkit-scrollbar-thumb{
+    background:#334155;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:999;
+    display:none;
+}
+
+/* ==========================
+   Mobile Responsive Sidebar
+========================== */
+
+.overlay{
+    display:none;
+}
+
+@media (max-width:768px){
+
+.overlay{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:998;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:270px;
+    left:-270px;
+    top:0;
+    transition:.3s;
+    z-index:999;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+/* Logo */
+
+.logo{
+    justify-content:flex-start;
+    padding:25px;
+}
+
+.logo h2,
+.logo p{
+    display:block;
+}
+
+/* Menu */
+
+.menuItem{
+    justify-content:flex-start;
+    align-items:center;
+    gap:15px;
+    padding:16px 18px;
+}
+
+.menuIcon{
+    width:22px;
+    min-width:22px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.menuItem span:last-child{
+    display:block;
+}
+
+/* Bottom */
+
+.storage{
+    display:block;
+}
+
+}

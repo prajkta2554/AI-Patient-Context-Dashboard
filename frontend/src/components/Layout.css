@@ -1,0 +1,71 @@
+/* ==========================
+   Layout
+========================== */
+
+.layout{
+    display:flex;
+    min-height:100vh;
+    background:#f1f5f9;
+}
+
+/* ==========================
+   Main
+========================== */
+
+.layoutMain{
+    flex:1;
+    margin-left:270px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================
+   Content
+========================== */
+
+.layoutContent{
+    flex:1;
+    padding:30px;
+    background:#f8fafc;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:900px){
+
+.layoutMain{
+    margin-left:85px;
+}
+
+.layoutContent{
+    padding:20px;
+}
+
+}
+
+@media(max-width:600px){
+
+.layoutMain{
+    margin-left:0;
+}
+
+.layoutContent{
+    padding:15px;
+}
+
+}
+@media (max-width:768px){
+
+.layoutMain{
+    margin-left:0;
+    width:100%;
+}
+
+.layoutContent{
+    width:100%;
+    padding:15px;
+}
+
+}

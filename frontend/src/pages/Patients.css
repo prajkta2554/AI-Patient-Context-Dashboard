@@ -1,0 +1,419 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+.patientsPage{
+    padding:30px;
+    background:#F4F7FC;
+    min-height:100vh;
+}
+
+/* Header */
+
+.patientsHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.patientsHeader h2{
+    font-size:34px;
+    color:#111827;
+}
+
+.patientsHeader p{
+    color:#6B7280;
+    margin-top:5px;
+}
+
+.createBtn{
+    background:#2563EB;
+    color:white;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.createBtn:hover{
+    background:#1D4ED8;
+}
+
+/* Stats */
+
+.statsGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin:30px 0;
+}
+
+.statCard{
+    background:#fff;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.statCard::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+}
+
+.statCard.blue::before{
+    background:#2563eb;
+}
+
+.statCard.green::before{
+    background:#22c55e;
+}
+
+.statCard.orange::before{
+    background:#f97316;
+}
+
+.statCard.purple::before{
+    background:#7c3aed;
+}
+
+.statTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.statTop svg{
+    font-size:28px;
+    color:#111827;
+}
+
+.statTop span{
+    font-size:14px;
+    color:#64748b;
+    font-weight:600;
+}
+
+.statCard h2{
+    font-size:48px;
+    font-weight:700;
+    color:#111827;
+    margin:0 0 12px;
+}
+
+.statCard p{
+    margin:0;
+    color:#475569;
+    font-size:18px;
+}
+
+
+
+/* Search */
+
+.searchBox{
+    background:white;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 20px;
+    border-radius:12px;
+    margin-bottom:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.searchBox svg{
+    color:#6B7280;
+}
+
+.searchBox input{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+
+/* Table */
+
+.tableCard{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#2563EB;
+    color:white;
+}
+
+th{
+    padding:18px;
+    text-align:left;
+}
+
+td{
+    padding:18px;
+    border-bottom:1px solid #E5E7EB;
+}
+
+tr:hover{
+    background:#F9FAFB;
+}
+
+.patientInfo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.Avatar{
+    width:38px;
+    height:38px;
+    /* min-width:38px;
+    min-height:38px; */
+
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
+
+    flex-shrink:0;
+
+    box-shadow:0 4px 10px rgba(37,99,235,.25);
+}
+
+.patientInfo span{
+    font-weight:600;
+    color:#1e293b;
+}
+
+.badge{
+    background:#DCFCE7;
+    color:#15803D;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.actionButtons{
+display:flex;
+gap:10px;
+}
+
+.viewBtn,
+.editBtn,
+.deleteBtn{
+
+width:38px;
+height:38px;
+border:none;
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+transition:.3s;
+text-decoration:none;
+font-size:15px;
+
+}
+
+.viewBtn{
+background:#2563EB;
+color:white;
+}
+
+.editBtn{
+background:#f59e0b;
+color:white;
+}
+
+.deleteBtn{
+background:#ef4444;
+color:white;
+}
+
+.viewBtn:hover,
+.editBtn:hover,
+.deleteBtn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.empty{
+    text-align:center;
+    padding:40px;
+    color:#6B7280;
+    font-size:18px;
+}
+
+/* Responsive */
+
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width:768px){
+.patientsPage{
+    padding:15px;
+}
+
+/* Header */
+
+.patientsHeader{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+}
+
+.patientsHeader h2{
+    font-size:26px;
+}
+
+.patientsHeader p{
+    font-size:14px;
+}
+
+.createBtn{
+    width:100%;
+    justify-content:center;
+    padding:14px;
+}
+
+/* Stats */
+
+.statsGrid{
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.statCard{
+    padding:20px;
+}
+
+.statCard h2{
+    font-size:34px;
+}
+
+.statCard p{
+    font-size:15px;
+}
+
+/* Search */
+
+.searchBox{
+    padding:14px 16px;
+    gap:10px;
+}
+
+.searchBox input{
+    font-size:15px;
+}
+
+/* Table */
+
+.tableCard{
+    overflow-x:auto;
+    border-radius:16px;
+}
+
+table{
+    min-width:720px;
+}
+
+th,
+td{
+    padding:14px;
+}
+
+.patientInfo{
+    gap:10px;
+}
+
+
+
+.actionButtons{
+    gap:8px;
+}
+
+.viewBtn,
+.editBtn,
+.deleteBtn{
+    width:34px;
+    height:34px;
+    font-size:14px;
+}
+
+}
+
+
+/* ==========================
+   Small Mobile
+========================== */
+
+@media (max-width:480px){
+
+.patientsPage{
+    padding:12px;
+}
+
+.patientsHeader h2{
+    font-size:22px;
+}
+
+.createBtn{
+    font-size:14px;
+    padding:12px;
+}
+
+.searchBox{
+    padding:12px;
+}
+
+.searchBox input{
+    font-size:14px;
+}
+
+.statCard{
+    padding:18px;
+}
+
+.statCard h2{
+    font-size:30px;
+}
+
+.statCard p{
+    font-size:14px;
+}
+
+}

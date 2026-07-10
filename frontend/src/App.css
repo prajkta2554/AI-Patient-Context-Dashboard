@@ -1,0 +1,25 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+background:#f3f4f6;
+}
+
+.app{
+display:flex;
+}
+
+.main{
+margin-left:260px;
+width:calc(100% - 260px);
+min-height:100vh;
+background:#f4f7fb;
+}
+
+.content{
+padding:30px;
+}

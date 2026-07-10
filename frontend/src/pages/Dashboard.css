@@ -1,0 +1,497 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.dashboard{
+    width:100%;
+}
+
+/* =========================
+   Welcome Banner
+========================= */
+
+.welcomeCard{
+    width:100%;
+    min-height:220px;
+    border-radius:24px;
+    padding:40px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 18px 40px rgba(37,99,235,.25);
+}
+
+.welcomeCard h1{
+    font-size:38px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.welcomeCard p{
+    max-width:520px;
+    line-height:28px;
+    opacity:.95;
+    font-size:17px;
+}
+
+.welcomeCard button{
+    margin-top:30px;
+    border:none;
+    background:#fff;
+    color:#2563eb;
+    padding:15px 24px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:15px;
+    transition:.3s;
+}
+
+.welcomeCard button:hover{
+    transform:translateY(-3px);
+}
+
+.welcomeIcon{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+}
+
+/* =========================
+ Stats
+========================= */
+
+.dashboardStats{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.dashboardCard{
+    border-radius:22px;
+    padding:28px;
+    color:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.dashboardCard:hover{
+    transform:translateY(-8px);
+}
+
+.dashboardCard.blue{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+}
+
+.dashboardCard.green{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+}
+
+.dashboardCard.orange{
+    background:linear-gradient(135deg,#ea580c,#fb923c);
+}
+
+.dashboardCard.red{
+    background:linear-gradient(135deg,#7c3aed,#8b5cf6);
+}
+
+.dashboardCard .statTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.dashboardCard .statTop svg{
+    font-size:30px;
+}
+
+.dashboardCard .statTop span{
+    background:rgba(255,255,255,.18);
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.dashboardCard h2{
+    font-size:44px;
+    margin:15px 0 8px;
+}
+
+.dashboardCard p{
+    font-size:15px;
+}
+
+/* =========================
+ Bottom Grid
+========================= */
+
+.dashboardGrid{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+.tableCard,
+.activityCard{
+    background:#fff;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.viewAllBtn{
+    background:#2563eb;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.viewAllBtn:hover{
+    background:#1d4ed8;
+}
+/* ==========================
+   Card Header
+========================== */
+
+.cardHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.cardHeader h2{
+    font-size:24px;
+    color:#111827;
+}
+
+.cardHeader button{
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cardHeader button:hover{
+    background:#1d4ed8;
+}
+
+/* ==========================
+   Table
+========================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#f8fafc;
+}
+
+th{
+    padding:18px;
+    text-align:left;
+    color:#64748b;
+    font-size:15px;
+    font-weight:600;
+    background-color: #eef4ff;
+}
+
+td{
+    padding:18px;
+    border-top:1px solid #e2e8f0;
+    color:#334155;
+}
+
+tbody tr{
+    transition:.3s;
+    
+}
+
+tbody tr:hover{
+    background:#f8fafc;
+}
+
+/* ==========================
+   Patient
+========================== */
+
+.patient{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.patientAvatar{
+    width:38px;
+    height:38px;
+    min-width:38px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    flex-shrink:0;
+}
+
+.patientName{
+    font-size:16px;
+    font-weight:500;
+    color:#1e293b;
+}
+/* ==========================
+   Badges
+========================== */
+
+.badge{
+    padding:8px 15px;
+    border-radius:25px;
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+}
+
+.badge.active{
+    background:#22c55e;
+}
+
+.badge.warning{
+    background:#f59e0b;
+}
+
+.badge.danger{
+    background:#ef4444;
+}
+
+/* ==========================
+   Activity
+========================== */
+
+.activityCard h2{
+    margin-bottom:30px;
+    color:#111827;
+}
+
+.activityItem{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px;
+    margin-bottom:16px;
+    border-radius:16px;
+    background:#f8fafc;
+    transition:.3s;
+}
+
+.activityItem:hover{
+    transform:translateX(6px);
+    background:#eef4ff;
+}
+
+.activityItem svg{
+    width:52px;
+    height:52px;
+    padding:15px;
+    border-radius:14px;
+    background:#2563eb;
+    color:#fff;
+}
+
+.activityItem h4{
+    margin-bottom:6px;
+    color:#111827;
+}
+
+.activityItem p{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+/* Tablet */
+
+@media (max-width:1024px){
+
+.dashboardStats{
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.dashboardGrid{
+    grid-template-columns:1fr;
+}
+
+.welcomeCard{
+    padding:30px;
+}
+
+.welcomeCard h1{
+    font-size:32px;
+}
+
+.welcomeIcon{
+    width:150px;
+    height:150px;
+    font-size:70px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.dashboard{
+    padding:15px;
+}
+
+/* Hero */
+
+.welcomeCard{
+    flex-direction:column;
+    text-align:center;
+    padding:25px 20px;
+    gap:20px;
+}
+
+.welcomeCard h1{
+    font-size:28px;
+}
+
+.welcomeCard p{
+    font-size:15px;
+    line-height:24px;
+}
+
+.welcomeCard button{
+    margin:20px auto 0;
+}
+
+.welcomeIcon{
+    display:none;
+}
+
+/* Cards */
+
+.dashboardStats{
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.dashboardCard{
+    padding:22px;
+}
+
+.dashboardCard h2{
+    font-size:36px;
+}
+
+/* Bottom */
+
+.dashboardGrid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+/* Header */
+
+.cardHeader{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+/* Table */
+
+.tableCard{
+    overflow-x:auto;
+}
+
+table{
+    min-width:500px;
+}
+
+/* Activity */
+
+.activityItem{
+    padding:14px;
+}
+
+.activityItem svg{
+    width:45px;
+    height:45px;
+    padding:12px;
+}
+
+.activityItem h4{
+    font-size:16px;
+}
+
+.activityItem p{
+    font-size:13px;
+}
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+.dashboard{
+    padding:10px;
+}
+
+.welcomeCard{
+    border-radius:18px;
+    padding:20px 15px;
+}
+
+.welcomeCard h1{
+    font-size:24px;
+}
+
+.dashboardCard{
+    border-radius:18px;
+}
+
+.tableCard,
+.activityCard{
+    padding:18px;
+    border-radius:18px;
+}
+
+.patientName{
+    font-size:14px;
+}
+
+}
