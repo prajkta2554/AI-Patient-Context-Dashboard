@@ -62,7 +62,7 @@ export default function Patients() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/patients/${id}`
+        `${import.meta.env.VITE_API_URL}/api/patients/${id}`
       );
 
       Swal.fire({
