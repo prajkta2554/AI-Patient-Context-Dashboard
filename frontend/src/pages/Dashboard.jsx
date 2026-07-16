@@ -24,7 +24,7 @@ export default function Dashboard() {
   const fetchPatients = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/patients"
+        `${import.meta.env.VITE_API_URL}/api/patients`
       );
 
       setPatients(res.data);

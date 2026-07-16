@@ -25,7 +25,7 @@ export default function EditPatient() {
   const fetchPatient = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/patients/${id}`
+        `${import.meta.env.VITE_API_URL}/api/patients/${id}`
       );
 
       const patient = res.data;
@@ -108,7 +108,7 @@ export default function EditPatient() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/patients/${id}`,
+       `${import.meta.env.VITE_API_URL}/api/patients/${id}`,
         payload
       );
 

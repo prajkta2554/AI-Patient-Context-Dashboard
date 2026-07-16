@@ -36,7 +36,7 @@ export default function PatientDetails() {
 
       const res = await axios.get(
 
-        `http://localhost:5000/api/patients/${id}`
+        `${import.meta.env.VITE_API_URL}/api/patients/${id}`
 
       );
 
@@ -66,7 +66,7 @@ export default function PatientDetails() {
 
       await axios.post(
 
-        `http://localhost:5000/api/patients/${id}/generate-summary`
+        `${import.meta.env.VITE_API_URL}/api/patients/${id}/generate-summary`
 
       );
 
@@ -120,7 +120,7 @@ export default function PatientDetails() {
 
       await axios.delete(
 
-        `http://localhost:5000/api/patients/${id}`
+         `${import.meta.env.VITE_API_URL}/api/patients/${id}`
 
       );
 

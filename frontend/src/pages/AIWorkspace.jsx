@@ -22,7 +22,7 @@ useEffect(() => {
 
 const fetchPatients = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/patients");
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/patients`);
     setPatients(res.data);
   } catch (err) {
     console.log(err);
@@ -45,7 +45,7 @@ const handleGenerate = async (patientId, patientName) => {
   try {
 
     const res = await axios.post(
-      `http://localhost:5000/api/patients/${patientId}/generate-summary`
+      `${import.meta.env.VITE_API_URL}/api/patients/${patientId}/generate-summary`
     );
 
     await fetchPatients();

@@ -76,7 +76,7 @@ export default function CreatePatient() {
       console.log(payload);
 
       await axios.post(
-        "http://localhost:5000/api/patients",
+        `${import.meta.env.VITE_API_URL}api/patients`,
         payload
       );
 
